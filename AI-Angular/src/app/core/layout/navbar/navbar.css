@@ -1,0 +1,31 @@
+/* BOTONES */
+.btn-secondary {
+    @apply border border-blue-600 text-blue-600 px-4 py-2 rounded-xl hover:bg-blue-50 transition;
+}
+
+/* TARJETAS */
+.card {
+    @apply bg-white rounded-2xl shadow-md p-6;
+}
+
+/* SOMBRAS */
+.shadow-soft {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.shadow-medium {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* FLEX CENTER */
+.flex-center {
+    @apply flex items-center justify-center;
+}
+
+.menu-item {
+    @apply text-left px-3 py-2 rounded-lg hover:bg-gray-100 transition;
+}
+
+.menu-item {
+    @apply text-left px-3 py-2 rounded-lg hover:bg-gray-100 transition;
+}

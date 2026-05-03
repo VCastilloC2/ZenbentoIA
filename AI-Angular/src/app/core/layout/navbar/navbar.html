@@ -1,0 +1,54 @@
+<nav class="flex justify-between items-center px-8 py-4 bg-white shadow-soft sticky top-0 z-50">
+
+  <!-- LOGO -->
+  <div class="flex items-center gap-3 cursor-pointer" [routerLink]="'/'">
+    <div class="w-9 h-9 bg-blue-600 rounded-xl flex-center text-white font-bold text-lg">
+      Z
+    </div>
+    <span class="font-bold text-xl tracking-wide">ZenbentoIA</span>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="flex items-center gap-4">
+
+    <!-- GUEST -->
+    <div *ngIf="!isAuth()" class="flex gap-3">
+      <button class="btn-secondary" [routerLink]="'/login'">Login</button>
+      <button class="btn-primary" [routerLink]="'/register'">Register</button>
+    </div>
+
+    <!-- USER -->
+    <div *ngIf="isAuth()" class="relative">
+      <button (click)="toggleMenu()" class="flex items-center gap-3 bg-gray-100 px-3 py-2 rounded-xl hover:bg-gray-200 transition">
+        <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex-center">👤</div>
+        <span class="font-medium">{{ username() }}</span>
+      </button>
+
+      <!-- DROPDOWN -->
+      <div *ngIf="menuOpen" class="absolute right-0 mt-3 w-60 bg-white rounded-2xl shadow-medium p-4 animate-fade-in">
+
+        <div class="mb-3 border-b pb-3">
+          <p class="font-semibold">{{ username() }}</p>
+          <p class="text-sm text-gray-500">
+            {{ isAdmin() ? 'Administrador' : 'Usuario' }}
+          </p>
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <button class="menu-item" [routerLink]="'/perfil'">Perfil</button>
+          <button class="menu-item" [routerLink]="'/configuracion'">Configuración</button>
+
+          <button *ngIf="isAdmin()" class="menu-item" [routerLink]="'/admin'">
+            Admin
+          </button>
+
+          <button class="menu-item text-red-500 hover:bg-red-100" (click)="logout()">
+            Cerrar sesión
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</nav>

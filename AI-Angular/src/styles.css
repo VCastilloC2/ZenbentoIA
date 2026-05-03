@@ -1,3 +1,72 @@
-/* You can add global styles to this file, and also import other style files */
-
 @import 'tailwindcss';
+
+/* 🎨 VARIABLES GLOBALES */
+:root {
+  --color-primary: #2563eb;      /* azul */
+  --color-primary-dark: #1e40af; /* azul rey */
+  --color-bg: #f8fafc;           /* fondo claro */
+  --color-text: #0f172a;         /* negro elegante */
+  --color-muted: #64748b;        /* gris */
+  --color-white: #ffffff;
+}
+
+/* 🌍 BASE */
+body {
+  @apply bg-[var(--color-bg)] text-[var(--color-text)] font-sans;
+}
+
+/* ✨ SCROLLBONITO */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 10px;
+}
+
+body {
+  font-family: 'Urbanist', sans-serif;
+}
+
+/* BOTONES */
+.btn-primary {
+  @apply bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition shadow-sm;
+}
+
+.btn-secondary {
+  @apply border border-blue-600 text-blue-600 px-4 py-2 rounded-xl hover:bg-blue-50 transition;
+}
+
+/* TARJETAS */
+.card {
+  @apply bg-white rounded-2xl shadow-md p-6;
+}
+
+/* SOMBRAS */
+.shadow-soft {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.shadow-medium {
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+/* FLEX CENTER */
+.flex-center {
+  @apply flex items-center justify-center;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.2s ease-in-out;
+}
