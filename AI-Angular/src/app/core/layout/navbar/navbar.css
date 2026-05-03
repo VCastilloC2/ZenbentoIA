@@ -1,14 +1,35 @@
-/* BOTONES */
+/* =========================
+   BOTONES
+========================= */
 .btn-secondary {
-    @apply border border-blue-600 text-blue-600 px-4 py-2 rounded-xl hover:bg-blue-50 transition;
+    border: 1px solid #2563eb; /* blue-600 */
+    color: #2563eb;
+    padding: 0.5rem 1rem; /* py-2 px-4 */
+    border-radius: 0.75rem; /* rounded-xl */
+    transition: all 0.2s ease;
+    background: transparent;
+    cursor: pointer;
 }
 
-/* TARJETAS */
+.btn-secondary:hover {
+    background-color: #eff6ff; /* blue-50 */
+}
+
+
+/* =========================
+   TARJETAS
+========================= */
 .card {
-    @apply bg-white rounded-2xl shadow-md p-6;
+    background-color: white;
+    border-radius: 1rem; /* rounded-2xl */
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
-/* SOMBRAS */
+
+/* =========================
+   SOMBRAS
+========================= */
 .shadow-soft {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
@@ -17,15 +38,28 @@
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
 
-/* FLEX CENTER */
+
+/* =========================
+   FLEX CENTER
+========================= */
 .flex-center {
-    @apply flex items-center justify-center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+
+/* =========================
+   MENU ITEMS
+========================= */
 .menu-item {
-    @apply text-left px-3 py-2 rounded-lg hover:bg-gray-100 transition;
+    text-align: left;
+    padding: 0.5rem 0.75rem; /* py-2 px-3 */
+    border-radius: 0.5rem;
+    transition: background 0.2s ease;
+    cursor: pointer;
 }
 
-.menu-item {
-    @apply text-left px-3 py-2 rounded-lg hover:bg-gray-100 transition;
+.menu-item:hover {
+    background-color: #f3f4f6; /* gray-100 */
 }
