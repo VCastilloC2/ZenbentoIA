@@ -1,5 +1,6 @@
 package com.App.IA.Configuration.Segurity;
 
+import com.App.IA.Services.implementation.UsuarioServicesImpl;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -35,7 +36,7 @@ public class SecurityConfig {
                 .cors(cors -> {})
                 .csrf(AbstractHttpConfigurer::disable)
                 .sessionManagement(session -> session
-                        .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
+                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                         .invalidSessionUrl("/auth/login")
                         .maximumSessions(2)
                         .expiredUrl("/auth/login?expired")
@@ -46,7 +47,8 @@ public class SecurityConfig {
                         .rememberMeParameter("remember-me")
                         .useSecureCookie(true))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/**").permitAll()
+                        .requestMatchers("/auth/**", "/api/**").permitAll()
+                        .requestMatchers("/").permitAll()
                         .anyRequest().authenticated())
                 .formLogin(form -> form
                         .loginPage("/auth/login")
@@ -71,7 +73,7 @@ public class SecurityConfig {
     }
 
     @Bean
-    public DaoAuthenticationProvider authenticationProvider(UsuarioServiceImpl usuario) {
+    public DaoAuthenticationProvider authenticationProvider(UsuarioServicesImpl usuario) {
         DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider(usuario);
         authenticationProvider.setPasswordEncoder(this.passwordEncoder());
         return authenticationProvider;

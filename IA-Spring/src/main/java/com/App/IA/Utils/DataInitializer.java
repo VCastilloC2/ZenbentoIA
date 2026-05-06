@@ -1,5 +1,6 @@
 package com.App.IA.Utils;
 
+import com.App.IA.Entity.Enum.Rol;
 import com.App.IA.Entity.Usuario;
 import com.App.IA.Repository.UsuarioRepository;
 import com.App.IA.Services.Interfaces.UsuarioServices;
@@ -19,6 +20,7 @@ public class DataInitializer implements CommandLineRunner {
 
         // Nobre del usuario a crear
         String username = "VictorCast2";
+        Rol rolAdmin = Rol.Admin;
 
         // Verificar que existe el usuario
         if (!usuarioRepository.existsByUsername(username)) {
@@ -28,6 +30,7 @@ public class DataInitializer implements CommandLineRunner {
                     .nombres("Víctor José")
                     .apellidos("Castillo Castro")
                     .username("VictorCast2")
+                    .rol(rolAdmin)
                     .password("$2a$10$FymAG5buNSGC1NdozQ031O8dsoDIQHdfPVT9subzCVrZaJFNLRtxa")
                     .isEnabled(true)
                     .accountNonLocked(true)

@@ -1,21 +1,22 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
-/* 🎨 VARIABLES GLOBALES */
+/* 🎨 VARIABLES */
 :root {
-  --color-primary: #2563eb;      /* azul */
-  --color-primary-dark: #1e40af; /* azul rey */
-  --color-bg: #f8fafc;           /* fondo claro */
-  --color-text: #0f172a;         /* negro elegante */
-  --color-muted: #64748b;        /* gris */
+  --color-primary: #2563eb;
+  --color-primary-dark: #1e40af;
+  --color-bg: #f8fafc;
+  --color-text: #0f172a;
+  --color-muted: #64748b;
   --color-white: #ffffff;
 }
 
 /* 🌍 BASE */
 body {
   @apply bg-[var(--color-bg)] text-[var(--color-text)] font-sans;
+  font-family: 'Urbanist', sans-serif;
 }
 
-/* ✨ SCROLLBONITO */
+/* ✨ SCROLL */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -24,11 +25,7 @@ body {
   border-radius: 10px;
 }
 
-body {
-  font-family: 'Urbanist', sans-serif;
-}
-
-/* BOTONES */
+/* 🔘 BOTONES */
 .btn-primary {
   @apply bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition shadow-sm;
 }
@@ -37,25 +34,31 @@ body {
   @apply border border-blue-600 text-blue-600 px-4 py-2 rounded-xl hover:bg-blue-50 transition;
 }
 
-/* TARJETAS */
+/* 🧩 TARJETAS */
 .card {
   @apply bg-white rounded-2xl shadow-md p-6;
 }
 
-/* SOMBRAS */
-.shadow-soft {
-  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-}
-
-.shadow-medium {
-  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-}
-
-/* FLEX CENTER */
+/* 🧠 UTILIDADES */
 .flex-center {
   @apply flex items-center justify-center;
 }
 
+/* 📌 MENU ITEM (IMPORTANTE: AHORA GLOBAL) */
+.menu-item {
+  @apply text-left px-3 py-2 rounded-lg hover:bg-gray-100 transition cursor-pointer;
+}
+
+/* 🌫️ SOMBRAS */
+.shadow-soft {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.shadow-medium {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* 🎬 ANIMACIONES */
 @keyframes fade-in {
   from {
     opacity: 0;
